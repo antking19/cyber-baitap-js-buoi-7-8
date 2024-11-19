@@ -12,8 +12,9 @@
  *      7. Kiểm tra nếu giá trị trong mảng lớn hơn 0 thì đặt cờ hiệu là true và thêm giá trị lớn hơn 0 vào mảng mới (newNumberList)
  *      8. Tạo biến nhỏ nhất min mặc định chứa số nhỏ nhất
  *      9. Lặp mảng newNumberList rồi so sánh biến min với từng giá trị trong mảng
- *      10.Nếu min lớn hơn giá trị nào trong mảng thì gán min bằng giá trị đó
- *      11. Kiểm tra flag, nếu flag bằng true thì xuất giá trị dương nhỏ nhất nếu flag bằng false thì không có số dương trong mảng
+ *      10. Nếu min lớn hơn giá trị nào trong mảng thì gán min bằng giá trị đó
+ *      11. Nếu min có gí trị lớn hơn 0 thì đặt cờ hiêu bằng true
+ *      12. Kiểm tra flag, nếu flag bằng true thì xuất giá trị dương nhỏ nhất nếu flag bằng false thì không có số dương trong mảng
  *
  * Đầu ra
  *      1. Xuất ra màn hình
@@ -43,6 +44,9 @@ function findSmallestPositiveNumber(numberList) {
             min = newNumberList[i];
         }
     }
+
+    if (min > 0) flag = true;
+
     return flag
         ? `👉Số dương nhỏ nhất: ${min}`
         : "👉Không có số dương trong mảng";
